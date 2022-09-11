@@ -1,3 +1,5 @@
+<?php include_once 'cabecalho.php'; ?>
+
 <?php
 include_once '../class/Usuario.php';
 $user = new Usuario();

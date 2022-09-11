@@ -73,7 +73,7 @@ if (filter_input(INPUT_POST, 'btnacessar')) {
             $matricula = $mostrar[0];
         }
         session_start();
-        $_SESSION['acesso'] = '7a85f4764bbd6daf1c3545efbbf0f279a6dc0beb';
+        $_SESSION['acesso'] = '1101cb047b73622bb692a730f0eb01de86daeceb';
         $_SESSION['nivel'] = $nivel;
         $_SESSION['matricula'] = $matricula;
 

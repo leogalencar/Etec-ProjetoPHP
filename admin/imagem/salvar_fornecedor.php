@@ -1,3 +1,5 @@
+<?php include_once 'cabecalho.php'; ?>
+
 <?php
 include_once '../class/Imagem_Fornecedor.php';
 $img = new Imagem();
