@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Ago-2022 às 01:55
+-- Tempo de geração: 13-Set-2022 às 05:22
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -154,6 +154,26 @@ INSERT INTO `fornecedor` (`id`, `nome`, `cep`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `gerente`
+--
+
+CREATE TABLE `gerente` (
+  `matricula` int(11) NOT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL,
+  `nivel` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `gerente`
+--
+
+INSERT INTO `gerente` (`matricula`, `nome`, `senha`, `nivel`) VALUES
+(123, 'Thaigo Hikori', 'f6f153b099db71424b47d4620e8a9bba709bc87d', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `imagem`
 --
 
@@ -230,15 +250,16 @@ CREATE TABLE `produto` (
 
 CREATE TABLE `usuario` (
   `matricula` int(11) NOT NULL,
-  `senha` varchar(40) DEFAULT NULL
+  `senha` varchar(40) DEFAULT NULL,
+  `nivel` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`matricula`, `senha`) VALUES
-(123, '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+INSERT INTO `usuario` (`matricula`, `senha`, `nivel`) VALUES
+(123, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -261,6 +282,12 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `fornecedor`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `gerente`
+--
+ALTER TABLE `gerente`
+  ADD PRIMARY KEY (`matricula`);
 
 --
 -- Índices para tabela `imagem`
