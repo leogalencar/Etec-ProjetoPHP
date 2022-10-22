@@ -131,6 +131,17 @@ class Cliente {
         }
     } //salvar
 
+    function paginar($inicio, $total_reg) {
+        try {
+            $this->con = new Conectar();
+            $sql = "SELECT * FROM cliente LIMIT $inicio,$total_reg ";
+            $executar = $this->con->prepare($sql);
+            return $executar->execute() == 1 ? $executar->fetchAll() : false;
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
 }
 
 //fim class
